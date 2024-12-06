@@ -1,0 +1,10 @@
+com\Trade\example\Trade\Controller\TradeController.class
+com\Trade\example\Trade\Repository\TradeRepository.class
+com\Trade\example\Trade\Entity\User.class
+com\Trade\example\Trade\TradeApplication.class
+com\Trade\example\Trade\Configuration\SecurityConfig.class
+com\Trade\example\Trade\Repository\UserRepository.class
+com\Trade\example\Trade\Service\TradeService.class
+com\Trade\example\Trade\Controller\UserController.class
+com\Trade\example\Trade\Service\UserService.class
+com\Trade\example\Trade\Entity\Trade.class
