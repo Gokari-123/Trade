@@ -17,9 +17,6 @@ public class TradeController {
     @Autowired
     TradeService tradeService;
 
-    @Autowired
-    Trade Trade;
-
     @PostMapping
     public ResponseEntity<?>
     createTrades(@RequestBody Trade trade, @RequestHeader("Authorization") String authHeader) {

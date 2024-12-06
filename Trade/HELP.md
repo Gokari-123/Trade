@@ -29,3 +29,74 @@ While most of the inheritance is fine, it also inherits unwanted elements like `
 To prevent this, the project POM contains empty overrides for these elements.
 If you manually switch to a different parent and actually want the inheritance, you need to remove those overrides.
 
+### Who to run This Api for  Create a User
+
+1 POST
+Url : http://localhost:8080/users1
+
+Json Body
+
+{
+"userId": "bhai@domain.com",
+"password": "bhai@123"
+}
+
+### 2 GET TRADES ALL 
+Url : http://localhost:9000/trades
+
+In Authorization 
+UserName anna@domain
+password anna@123
+
+Response
+{
+"id": 1,
+"quantity": 100,
+"price": 1500.75,
+"buysell": "buy",
+"asset_type": "Equity",
+"origin_country": "JP",
+"user": {
+"userId": "Hussain@domain.com",
+"password": "$2a$10$0FMFhcunhw5.YJ8SDf3miunwms3kCzDq0NvigUCCYafMgQZTiIs6m"
+},
+"currency": "JPY"
+},
+{
+"id": 2,
+"quantity": 200,
+"price": 20000.75,
+"buysell": "buy",
+"asset_type": "Equity",
+"origin_country": "JP",
+"user": {
+"userId": "mahaboob@domain.com",
+"password": "$2a$10$KTTCW1WszHjZ9nIZXxQAxO1Q09jT2TGbvVH3EszT51sFlasuqCBeW"
+},
+"currency": "JPY"
+}
+]
+
+### 3 Create A trades using POST API
+
+Url localhost:9000/trades
+In Authorization
+UserName anna@domain
+password anna@123
+
+Request Body
+{
+"quantity": 300,
+"price": 3500.50,
+"currency": "JPY",
+"buysell": "Buy",
+"asset_type": "Equity",
+"origin_country": "JP",
+"user": {
+"userId": "anna@domain.com"
+}
+}
+
+
+
+
