@@ -18,10 +18,10 @@ public class TradeService {
     @Autowired
     UserService userService;
 
-    public void createTrade(Trade trade,String authHeader)throws Exception{
+    public Trade createTrade(Trade trade,String authHeader)throws Exception{
         User user=authenticate(authHeader);
         trade.setUser(user);
-        tradeRepository.save(trade);
+       return tradeRepository.save(trade);
     }
 
     public List<Trade>  getTrades(Map<String,String>criteria, String authHeader)throws Exception{

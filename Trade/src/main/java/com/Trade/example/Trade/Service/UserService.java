@@ -16,12 +16,12 @@ public class UserService {
     PasswordEncoder passwordEncoder;
 
 
-    public void createUser(User user) throws Exception {
+    public User createUser(User user) throws Exception {
         if (userRepository.existsById(user.getUserId())) {
             throw new Exception("User Already Exists");
         }
         user.setPassword(passwordEncoder.encode(user.getPassword()));
-        userRepository.save(user);
+      return  userRepository.save(user);
     }
 
     public User authenticate(String userId, String password) throws Exception {
