@@ -21,12 +21,11 @@ public class UserController {
     @PostMapping
     public ResponseEntity<?> createUser(@RequestBody User user){
         try {
-            userService.createUser(user);
-            return new ResponseEntity<>(HttpStatus.CREATED);
+            User createdUser =userService.createUser(user);
+            return new ResponseEntity<>(createdUser,HttpStatus.CREATED);
         } catch (Exception e){
             e.printStackTrace();
             return  new ResponseEntity<>(Map.of("Message",e.getMessage()),HttpStatus.BAD_REQUEST);
-
         }
     }
 }

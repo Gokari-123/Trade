@@ -21,8 +21,8 @@ public class TradeController {
     public ResponseEntity<?>
     createTrades(@RequestBody Trade trade, @RequestHeader("Authorization") String authHeader) {
         try {
-          tradeService.createTrade(trade, authHeader);
-            return new ResponseEntity<>(HttpStatus.CREATED);
+         Trade tradenew= tradeService.createTrade(trade, authHeader);
+            return new ResponseEntity<>(tradenew,HttpStatus.CREATED);
         } catch (Exception e) {
             e.printStackTrace();
             return new ResponseEntity<>(Map.of("Message", e.getMessage()), HttpStatus.BAD_REQUEST);
@@ -35,7 +35,7 @@ public class TradeController {
         try {
             List<Trade> trade = tradeService.getTrades(criteria, authHeader);
             if (trade.isEmpty()) {
-                return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+                return new ResponseEntity<>(trade,HttpStatus.NOT_FOUND);
             }
             return new ResponseEntity<>(trade, HttpStatus.OK);
         } catch (Exception e) {
